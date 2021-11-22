@@ -1,49 +1,17 @@
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<script>
-    $(function () {
 
-        resize_tab();
-    });
-
-    $(window).resize(function () {
-        resize_tab();
-    }).resize();
-
-    function resize_tab() {
-
-        var viewportWidth = $(window).innerWidth();
-        var viewportHeight = $(window).innerHeight();
-
-        var width = $('#bg-img').width();
-        var height = $('#bg-img').height();
-
-
-        if ((viewportWidth / viewportHeight) > (width / height)) {
-
-            $('#bg-img').css({
-                'width': '100%',
-                'height': 'auto',
-                'margin-left': 0 - width / 2,
-                'margin-top': 0 - height / 2
-            });
-
-
-        } else {
-            $('#bg-img').css({
-                'width': 'auto',
-                'height': '100%',
-                'margin-left': 0 - width / 2,
-                'margin-top': 0 - height / 2
-            });
-        }
-    }
-</script>
+    
 <style>
-  #bg-img {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            z-index: -99;
+   html {
+            height: 100%;
+        }
+
+        body {
+            background-image: url(https://i.ibb.co/3zyXX2r/3-0.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
         }
   .red-text {
     color: red;
@@ -71,7 +39,6 @@
   }
 </style>
 <body>
-  <img src="https://i.ibb.co/3zyXX2r/3-0.jpg" id="bg-img"> 
 <h2 class="red-text">Welcome</h2>
 <h1 class="blue-text">我的個人頁面</h1>
 <h1>409262619</h1>
