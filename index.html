@@ -1,11 +1,8 @@
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
 <script>
-  $(document).ready(function() {
-    $("button").addClass("animated");
-    $(".btn").addClass("shake");
-    $("#target1").addClass("btn-primary");
-    $("body").addClass("animated hinge");
-  });
+   $(".slide_toggle").click(function(){
+$(this).next().slideToggle();
+});
 </script>
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
@@ -46,6 +43,20 @@
   .smaller-image {
     width: 200px;
   }
+  .slide_toggle {
+text-align: center;
+cursor: pointer;
+font-weight: bold;
+/* 收合提示字串區塊, 還可加入自訂 CSS 效果 */
+line-height: 170%;
+background-color: #eed;
+border-radius: 7px;
+}
+.slide_toggle + div {
+display: none;
+margin-top: 10px;
+/* 隱藏註解文字區塊, 請加入自訂 CSS 效果 */
+}
 </style>
 <body>
 <h2 class="red-text">Welcome</h2>
@@ -63,6 +74,8 @@
       </div>  
       </div>
       </div>
+  <div class="slide_toggle">點開我</div>
+<div>沒東西</div>
 </body>
 <main>
 
