@@ -12,20 +12,20 @@ $(function(){
  var defHeight = $('#wrapm').height();
  if(defHeight >= slideHeight){
   $('#wrapm').css('height' , slideHeight + 'px');
-  $('#read-more').append('<a href="#">点击查看更多。。</a>');
+  $('#read-more').append('<a href="#">查看更多。。</a>');
   $('#read-more a').click(function(){
    var curHeight = $('#wrapm').height();
    if(curHeight == slideHeight){
     $('#wrapm').animate({
      height: defHeight
     }, "normal");
-    $('#read-more a').html('点击隐藏');
+    $('#read-more a').html('點擊隐藏');
     $('#gradient').fadeOut();
    }else{
     $('#wrapm').animate({
      height: slideHeight
     }, "normal");
-    $('#read-more a').html('点击查看更多。。');
+    $('#read-more a').html('查看更多。。');
     $('#gradient').fadeIn();
    }
    return false;
