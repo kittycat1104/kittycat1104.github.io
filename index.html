@@ -1,9 +1,40 @@
-<script "http://code.jquery.com/jquery-1.8.0.min.js">
-
-   $(".slide_toggle").click(function(){
-$(this).next().slideToggle();
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery文本段落展开和折叠效果</title>
+<style>
+#wrapm {overflow: hidden;}
+ #read-more{text-align: center;}
+</style>
+<script src="https://www.yzktw.com.cn/zb_system/script/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+ var slideHeight = 78; // px
+ var defHeight = $('#wrapm').height();
+ if(defHeight >= slideHeight){
+  $('#wrapm').css('height' , slideHeight + 'px');
+  $('#read-more').append('<a href="#">点击查看更多。。</a>');
+  $('#read-more a').click(function(){
+   var curHeight = $('#wrapm').height();
+   if(curHeight == slideHeight){
+    $('#wrapm').animate({
+     height: defHeight
+    }, "normal");
+    $('#read-more a').html('点击隐藏');
+    $('#gradient').fadeOut();
+   }else{
+    $('#wrapm').animate({
+     height: slideHeight
+    }, "normal");
+    $('#read-more a').html('点击查看更多。。');
+    $('#gradient').fadeIn();
+   }
+   return false;
+  });  
+ }
 });
 </script>
+</head>
+
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 
     
@@ -76,6 +107,18 @@ line-height: 170%;
       </div>
   <div class="slide_toggle">點開我</div>
 <div>沒東西</div>
+   <div id="wrapm" class="wrapm">
+    <div>
+      <p>貓（學名：Felis catus[1][2][3]或Felis silvestris catus），通常指家貓，為小型貓科動物。
+         ，會引入例如狂犬病等進入人類生活圈，因此對飼主知識技術與社會責任要求也較高，先進國家的公衛系統普遍會針對野貓進行抓捕絕育，管理意義即在於此。長期飼育的貓平均壽命為12年以上，
+         歷史上最長壽的貓則達38歲[5]。</p>
+      <p>根據遺傳學及考古學分析，人類養貓的紀錄可追溯至10,000年前的新月沃土地區，古埃及人飼養貓的紀錄可追溯至3,600年前</p>
+      <p>目的可能為捕鼠及其他齧齒目動物，以防止牠們吃掉榖物。也可能純粹以愛為出發點，養貓與人相伴。[4]現在，貓成為世界上最為廣泛的寵物之一，</p>
+       <p>飼養率僅次於犬（或稱狗），但同時也是危害十分廣泛的外來種，由於獵捕的習慣，威脅著很多原生鳥類、齧齒類的生存，是世界百大外來入侵種之一。更直接的風險是因狩獵而感染野外病菌的貓</p>
+    </div>
+    <div id="gradient"></div>
+  </div>
+  <div id="read-more"></div>
 </body>
 <main>
 
